@@ -1,14 +1,12 @@
-process.stdout.write('prompt >');
-// const exportsFromFileB = require('./fileB')
+const pwd = require('./pwd');
 
-process.stdin.on('data', (data) => {
-     
+process.stdout.write('prompt >')
+
+process.stdin.on('data', data => {
     const cmd = data.toString().trim();
-    if (cmd === 'pwd') {
-        process.stdout.write(`${process.cwd(cmd)}`);
-    }
- 
+   
+if (cmd === 'pwd') {
+  pwd(cmd);
+}
 
-    // process.stdout.write('\nprompt > ');
-});
-
+})
